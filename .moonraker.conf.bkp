@@ -1,9 +1,17 @@
 [server]
 host = 0.0.0.0
 port = 7125
-klippy_uds_address = /home/fwe/printer_data/comms/klippy.sock
+max_upload_size = 1024
+klippy_uds_address = ~/printer_data/comms/klippy.sock
+
+[file_manager]
+enable_object_processing = False
 
 [authorization]
+cors_domains = 
+	*://my.mainsail.xyz
+	*://*.local
+	*://*.lan
 trusted_clients = 
 	10.0.0.0/8
 	127.0.0.0/8
@@ -12,21 +20,18 @@ trusted_clients =
 	192.168.0.0/16
 	FE80::/10
 	::1/128
-cors_domains = 
-	http://*.lan
-	http://*.local
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	https://app.fluidd.xyz
-	http://app.fluidd.xyz
 
 [octoprint_compat]
 
 [history]
 
+[announcements]
+subscriptions = 
+	mainsail
+
 [update_manager]
-channel = dev
 refresh_interval = 168
+enable_auto_refresh = True
 
 [update_manager mainsail]
 type = web
