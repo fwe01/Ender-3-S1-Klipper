@@ -2,7 +2,7 @@
 
 Config for Ender 3 S1 with Klipper installed
 
-# Command for exporting git log grouped by Date
+# Command for exporting git log grouped by date
   ```bash
     git log --date=short --pretty=format:"%ad %s" | awk '{print $1, substr($0, index($0,$2))}' | sort | awk '{
         date=$1;
